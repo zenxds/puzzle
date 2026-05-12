@@ -55,6 +55,9 @@
       this.completed = false;
       // 棋盘格状态：slots[col][row] = piece 或 null
       this.slots = null;
+      // 碎片区当前的展示队列（按显示顺序），位置由 trayPositions[index] 决定
+      this.trayOrder = [];
+      this.trayPositions = [];
     }
 
     async start() {
@@ -119,24 +122,39 @@
         this.trayEl.style.minHeight = neededH + 'px';
       }
 
-      const slots = [];
+      const positions = [];
       for (let r = 0; r < rowsNeeded; r++) {
         for (let c = 0; c < perRow; c++) {
-          if (slots.length >= this.pieces.length) break;
-          slots.push({
+          if (positions.length >= this.pieces.length) break;
+          positions.push({
             x: padding + c * cellW + (cellW - pieceW) / 2,
             y: padding + r * cellH + (cellH - pieceH) / 2,
           });
         }
       }
-      shuffleArray(slots);
+      this.trayPositions = positions;
+      this.trayOrder = shuffleArray(this.pieces.slice());
 
-      this.pieces.forEach((piece, idx) => {
-        const s = slots[idx];
+      this.trayOrder.forEach((piece, idx) => {
+        const p = positions[idx];
         piece.style.position = 'absolute';
-        piece.style.left = s.x + 'px';
-        piece.style.top = s.y + 'px';
-        piece._homeTrayPos = { x: s.x, y: s.y };
+        piece.style.left = p.x + 'px';
+        piece.style.top = p.y + 'px';
+      });
+    }
+
+    // 让 trayOrder 中所有碎片平滑过渡到它们当前 index 对应的位置
+    refreshTrayLayout() {
+      const fromRects = this.trayOrder.map(p => p.getBoundingClientRect());
+      this.trayOrder.forEach((piece, i) => {
+        const target = this.trayPositions[i];
+        if (!target) return;
+        piece.style.left = target.x + 'px';
+        piece.style.top = target.y + 'px';
+      });
+      this.trayOrder.forEach((piece, i) => {
+        if (!this.trayPositions[i]) return;
+        this.animateFromTo(piece, fromRects[i]);
       });
     }
 
@@ -244,7 +262,10 @@
 
     placeOnBoard(piece, col, row, withSound) {
       const { pieceW, pieceH } = this.size;
-      // 用 FLIP 思路：先记下当前视觉位置，再移到目标，再用 transform 回到旧位置，最后 transition 到 0
+      // 若从碎片区上去，先从队列里移除（剩余碎片会被自动前移）
+      const trayIdx = this.trayOrder.indexOf(piece);
+      if (trayIdx !== -1) this.trayOrder.splice(trayIdx, 1);
+
       const fromRect = piece.getBoundingClientRect();
       this.boardEl.appendChild(piece);
       piece.style.position = 'absolute';
@@ -252,28 +273,34 @@
       piece.style.top = (row * pieceH) + 'px';
       piece._slot = { col, row };
       this.slots[col][row] = piece;
-
-      // 触发"安放"小动画
       this.animateFromTo(piece, fromRect);
 
       const isCorrect = parseInt(piece.dataset.col, 10) === col && parseInt(piece.dataset.row, 10) === row;
-      if (isCorrect) {
-        piece.classList.add('placed');
-      } else {
-        piece.classList.remove('placed');
-      }
+      if (isCorrect) piece.classList.add('placed');
+      else piece.classList.remove('placed');
       if (withSound && window.SoundFX) {
         if (isCorrect) SoundFX.playDing(); else SoundFX.playPick();
       }
+
+      // 让剩下的碎片自动前移
+      if (trayIdx !== -1) this.refreshTrayLayout();
     }
 
     sendToTray(piece, isUserDrop) {
-      const target = piece._homeTrayPos;
+      // 不在队列里说明是从板子上下来的，追加到队尾
+      if (this.trayOrder.indexOf(piece) === -1) {
+        this.trayOrder.push(piece);
+      }
+      const idx = this.trayOrder.indexOf(piece);
+      const target = this.trayPositions[idx];
+
       const fromRect = piece.getBoundingClientRect();
       this.trayEl.appendChild(piece);
       piece.style.position = 'absolute';
-      piece.style.left = target.x + 'px';
-      piece.style.top = target.y + 'px';
+      if (target) {
+        piece.style.left = target.x + 'px';
+        piece.style.top = target.y + 'px';
+      }
       piece._slot = null;
       piece.classList.remove('placed');
       this.animateFromTo(piece, fromRect);
