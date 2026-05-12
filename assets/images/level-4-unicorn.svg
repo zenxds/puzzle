@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <linearGradient id="sky4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6d2ff"/>
+      <stop offset="0.5" stop-color="#ffd9ee"/>
+      <stop offset="1" stop-color="#d4f0ff"/>
+    </linearGradient>
+    <linearGradient id="rainbow4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff5e7e"/>
+      <stop offset="0.2" stop-color="#ffb24d"/>
+      <stop offset="0.4" stop-color="#ffe14d"/>
+      <stop offset="0.6" stop-color="#7be07b"/>
+      <stop offset="0.8" stop-color="#5eb8ff"/>
+      <stop offset="1" stop-color="#b07eff"/>
+    </linearGradient>
+    <linearGradient id="castle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff0fa"/>
+      <stop offset="1" stop-color="#dcc8ee"/>
+    </linearGradient>
+  </defs>
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="url(#sky4)"/>
+  <!-- 星星 -->
+  <g fill="#ffffff">
+    <circle cx="80" cy="60" r="3"/>
+    <circle cx="120" cy="100" r="2"/>
+    <circle cx="500" cy="50" r="3"/>
+    <circle cx="540" cy="90" r="2"/>
+    <circle cx="300" cy="40" r="2.5"/>
+  </g>
+  <!-- 彩虹 -->
+  <g opacity="0.55" fill="none">
+    <path d="M 100 480 A 200 200 0 0 1 500 480" stroke="#ff5e7e" stroke-width="14"/>
+    <path d="M 114 480 A 186 186 0 0 1 486 480" stroke="#ffb24d" stroke-width="14"/>
+    <path d="M 128 480 A 172 172 0 0 1 472 480" stroke="#ffe14d" stroke-width="14"/>
+    <path d="M 142 480 A 158 158 0 0 1 458 480" stroke="#7be07b" stroke-width="14"/>
+    <path d="M 156 480 A 144 144 0 0 1 444 480" stroke="#5eb8ff" stroke-width="14"/>
+    <path d="M 170 480 A 130 130 0 0 1 430 480" stroke="#b07eff" stroke-width="14"/>
+  </g>
+  <!-- 远处城堡 -->
+  <g>
+    <!-- 城堡主体 -->
+    <rect x="60" y="220" width="120" height="140" fill="url(#castle)"/>
+    <rect x="80" y="180" width="80" height="180" fill="url(#castle)"/>
+    <!-- 塔尖 -->
+    <polygon points="60,220 120,170 180,220" fill="#ff7db0"/>
+    <polygon points="80,180 120,140 160,180" fill="#ff7db0"/>
+    <!-- 窗 -->
+    <rect x="105" y="220" width="14" height="22" rx="6" fill="#5e3a8c"/>
+    <rect x="125" y="220" width="14" height="22" rx="6" fill="#5e3a8c"/>
+    <!-- 门 -->
+    <path d="M 105 360 L 105 320 Q 120 305 135 320 L 135 360 Z" fill="#5e3a8c"/>
+    <!-- 旗 -->
+    <line x1="120" y1="140" x2="120" y2="115" stroke="#7a5a8a" stroke-width="2"/>
+    <polygon points="120,115 138,122 120,128" fill="#ff5e7e"/>
+  </g>
+  <!-- 草地 -->
+  <path d="M0 410 Q 200 395 400 410 T 600 405 L 600 500 L 0 500 Z" fill="#b8e9c9"/>
+  <!-- 独角兽身体 -->
+  <ellipse cx="380" cy="380" rx="110" ry="55" fill="#ffffff"/>
+  <!-- 腿 -->
+  <rect x="320" y="395" width="22" height="60" rx="10" fill="#ffffff"/>
+  <rect x="430" y="395" width="22" height="60" rx="10" fill="#ffffff"/>
+  <rect x="355" y="405" width="20" height="52" rx="9" fill="#f5f0fa"/>
+  <rect x="395" y="405" width="20" height="52" rx="9" fill="#f5f0fa"/>
+  <!-- 蹄子 -->
+  <rect x="318" y="448" width="26" height="10" rx="3" fill="#c8a8e9"/>
+  <rect x="428" y="448" width="26" height="10" rx="3" fill="#c8a8e9"/>
+  <rect x="354" y="450" width="22" height="8" rx="3" fill="#c8a8e9"/>
+  <rect x="394" y="450" width="22" height="8" rx="3" fill="#c8a8e9"/>
+  <!-- 尾巴（彩虹） -->
+  <path d="M 280 360 Q 220 360 200 430 Q 230 410 260 410 Q 280 400 290 380 Z" fill="url(#rainbow4)"/>
+  <!-- 头 -->
+  <ellipse cx="460" cy="300" rx="65" ry="62" fill="#ffffff"/>
+  <!-- 鬃毛 -->
+  <path d="M 410 250 Q 430 200 460 235 Q 490 200 510 245 Q 530 210 530 270 Q 510 280 490 270 Q 470 290 430 280 Q 415 280 410 250 Z" fill="url(#rainbow4)"/>
+  <path d="M 400 280 Q 380 330 395 360 Q 415 340 420 305 Z" fill="url(#rainbow4)"/>
+  <!-- 角 -->
+  <polygon points="455,200 470,200 462,150" fill="#ffe14d" stroke="#d4a000" stroke-width="2"/>
+  <line x1="458" y1="190" x2="466" y2="190" stroke="#d4a000" stroke-width="1.5"/>
+  <line x1="459" y1="175" x2="465" y2="175" stroke="#d4a000" stroke-width="1.5"/>
+  <!-- 耳朵 -->
+  <path d="M 433 245 L 425 215 L 445 235 Z" fill="#ffffff"/>
+  <path d="M 495 235 L 510 220 L 500 250 Z" fill="#ffffff"/>
+  <!-- 眼睛 -->
+  <ellipse cx="445" cy="300" rx="9" ry="13" fill="#ffffff"/>
+  <ellipse cx="475" cy="300" rx="9" ry="13" fill="#ffffff"/>
+  <circle cx="446" cy="304" r="6" fill="#5e3a8c"/>
+  <circle cx="476" cy="304" r="6" fill="#5e3a8c"/>
+  <circle cx="443" cy="301" r="2" fill="#ffffff"/>
+  <circle cx="473" cy="301" r="2" fill="#ffffff"/>
+  <!-- 长睫毛 -->
+  <g stroke="#5e3a8c" stroke-width="2" stroke-linecap="round">
+    <path d="M 438 290 L 433 285"/>
+    <path d="M 445 287 L 444 281"/>
+    <path d="M 468 287 L 467 281"/>
+    <path d="M 482 290 L 487 285"/>
+  </g>
+  <!-- 腮红 -->
+  <ellipse cx="425" cy="325" rx="10" ry="6" fill="#ff8fb6" opacity="0.65"/>
+  <ellipse cx="495" cy="325" rx="10" ry="6" fill="#ff8fb6" opacity="0.65"/>
+  <!-- 鼻嘴 -->
+  <ellipse cx="460" cy="335" rx="14" ry="10" fill="#f5e6f0"/>
+  <path d="M 455 340 Q 460 345 465 340" stroke="#7a4368" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- 屁股印记：星星 -->
+  <polygon points="380,375 386,388 400,388 389,397 393,411 380,402 367,411 371,397 360,388 374,388" fill="#ffd24d"/>
+</svg>

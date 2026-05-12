@@ -1,0 +1,12 @@
+{
+  "name": "kids-puzzle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "适合 5 岁小朋友的浏览器拼图游戏（纯静态站点，无构建步骤）",
+  "scripts": {
+    "dev": "http-server -p 5173 -c-1 -o"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

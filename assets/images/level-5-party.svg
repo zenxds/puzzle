@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff0fa"/>
+      <stop offset="1" stop-color="#cfeaff"/>
+    </linearGradient>
+  </defs>
+  <!-- 背景 -->
+  <rect width="600" height="600" fill="url(#bg5)"/>
+  <!-- 五彩纸屑装饰 -->
+  <g>
+    <rect x="60" y="40" width="14" height="6" rx="2" fill="#ff5e7e" transform="rotate(20 67 43)"/>
+    <rect x="120" y="80" width="14" height="6" rx="2" fill="#ffb24d" transform="rotate(-15 127 83)"/>
+    <rect x="200" y="35" width="14" height="6" rx="2" fill="#5eb8ff" transform="rotate(40 207 38)"/>
+    <rect x="380" y="50" width="14" height="6" rx="2" fill="#7be07b" transform="rotate(-30 387 53)"/>
+    <rect x="480" y="90" width="14" height="6" rx="2" fill="#b07eff" transform="rotate(15 487 93)"/>
+    <rect x="540" y="40" width="14" height="6" rx="2" fill="#ff5e7e" transform="rotate(-25 547 43)"/>
+    <circle cx="90" cy="120" r="4" fill="#ffe14d"/>
+    <circle cx="250" cy="80" r="4" fill="#ff7db0"/>
+    <circle cx="450" cy="120" r="4" fill="#5fa8ff"/>
+    <circle cx="520" cy="160" r="4" fill="#7be07b"/>
+    <circle cx="40" cy="180" r="4" fill="#b07eff"/>
+  </g>
+  <!-- 气球 -->
+  <g>
+    <ellipse cx="80" cy="200" rx="32" ry="40" fill="#ff5e7e"/>
+    <path d="M 80 240 L 78 244 L 82 244 Z" fill="#ff5e7e"/>
+    <path d="M 80 244 Q 70 280 80 320 Q 90 360 75 400" stroke="#a04077" stroke-width="2" fill="none"/>
+    <ellipse cx="68" cy="190" rx="6" ry="10" fill="#ff9ab6" opacity="0.6"/>
+  </g>
+  <g>
+    <ellipse cx="540" cy="200" rx="32" ry="40" fill="#5eb8ff"/>
+    <path d="M 540 240 L 538 244 L 542 244 Z" fill="#5eb8ff"/>
+    <path d="M 540 244 Q 550 280 540 320 Q 530 360 545 400" stroke="#2a6090" stroke-width="2" fill="none"/>
+    <ellipse cx="528" cy="190" rx="6" ry="10" fill="#a0d6ff" opacity="0.6"/>
+  </g>
+  <g>
+    <ellipse cx="510" cy="170" rx="28" ry="34" fill="#ffe14d"/>
+    <path d="M 510 204 Q 512 240 505 270" stroke="#a08008" stroke-width="2" fill="none"/>
+  </g>
+  <g>
+    <ellipse cx="110" cy="170" rx="28" ry="34" fill="#b07eff"/>
+    <path d="M 110 204 Q 108 240 115 270" stroke="#604098" stroke-width="2" fill="none"/>
+  </g>
+  <!-- 地面 -->
+  <path d="M0 480 L 600 480 L 600 600 L 0 600 Z" fill="#b8e9c9"/>
+  <!-- 桌子 -->
+  <rect x="180" y="430" width="240" height="50" rx="8" fill="#a06b3c"/>
+  <rect x="180" y="430" width="240" height="14" rx="6" fill="#c08a5c"/>
+  <rect x="195" y="480" width="14" height="80" fill="#a06b3c"/>
+  <rect x="391" y="480" width="14" height="80" fill="#a06b3c"/>
+  <!-- 蛋糕 -->
+  <g>
+    <!-- 底层 -->
+    <ellipse cx="300" cy="420" rx="80" ry="14" fill="#ffd9ee"/>
+    <rect x="220" y="370" width="160" height="55" fill="#ffd9ee"/>
+    <ellipse cx="300" cy="370" rx="80" ry="14" fill="#ffeef7"/>
+    <!-- 樱桃装饰 -->
+    <g>
+      <circle cx="240" cy="370" r="6" fill="#ff3e3e"/>
+      <circle cx="270" cy="370" r="6" fill="#ff3e3e"/>
+      <circle cx="300" cy="370" r="6" fill="#ff3e3e"/>
+      <circle cx="330" cy="370" r="6" fill="#ff3e3e"/>
+      <circle cx="360" cy="370" r="6" fill="#ff3e3e"/>
+    </g>
+    <!-- 中层 -->
+    <ellipse cx="300" cy="360" rx="55" ry="10" fill="#fff3a8"/>
+    <rect x="245" y="320" width="110" height="42" fill="#fff3a8"/>
+    <ellipse cx="300" cy="320" rx="55" ry="10" fill="#fff9c8"/>
+    <!-- 顶层 -->
+    <ellipse cx="300" cy="310" rx="32" ry="6" fill="#c8a8e9"/>
+    <rect x="268" y="280" width="64" height="32" fill="#c8a8e9"/>
+    <ellipse cx="300" cy="280" rx="32" ry="6" fill="#d9c0f0"/>
+    <!-- 蜡烛 -->
+    <rect x="296" y="250" width="8" height="30" fill="#ff5e7e"/>
+    <ellipse cx="300" cy="245" rx="6" ry="10" fill="#ffb24d"/>
+    <ellipse cx="300" cy="240" rx="3" ry="5" fill="#fff3a8"/>
+  </g>
+  <!-- 小猫（左） -->
+  <g transform="translate(120,460)">
+    <ellipse cx="0" cy="20" rx="38" ry="30" fill="#ffa770"/>
+    <circle cx="0" cy="-15" r="34" fill="#ffa770"/>
+    <polygon points="-22,-32 -12,-45 -8,-25" fill="#ffa770"/>
+    <polygon points="22,-32 12,-45 8,-25" fill="#ffa770"/>
+    <polygon points="-18,-32 -14,-40 -10,-30" fill="#ff7db0"/>
+    <polygon points="18,-32 14,-40 10,-30" fill="#ff7db0"/>
+    <circle cx="-10" cy="-12" r="4" fill="#2a1f15"/>
+    <circle cx="10" cy="-12" r="4" fill="#2a1f15"/>
+    <circle cx="-9" cy="-13" r="1.2" fill="#ffffff"/>
+    <circle cx="11" cy="-13" r="1.2" fill="#ffffff"/>
+    <path d="M -3 -2 L 0 2 L 3 -2 Z" fill="#ff7db0"/>
+    <path d="M 0 2 Q -4 6 -7 4" stroke="#2a1f15" stroke-width="1.5" fill="none"/>
+    <path d="M 0 2 Q 4 6 7 4" stroke="#2a1f15" stroke-width="1.5" fill="none"/>
+    <!-- 帽子 -->
+    <polygon points="-20,-42 20,-42 0,-72" fill="#5eb8ff"/>
+    <ellipse cx="0" cy="-72" rx="5" ry="4" fill="#ffe14d"/>
+  </g>
+  <!-- 小兔（右） -->
+  <g transform="translate(480,460)">
+    <ellipse cx="0" cy="22" rx="36" ry="28" fill="#ffffff"/>
+    <circle cx="0" cy="-15" r="32" fill="#ffffff"/>
+    <ellipse cx="-12" cy="-50" rx="7" ry="22" fill="#ffffff"/>
+    <ellipse cx="12" cy="-50" rx="7" ry="22" fill="#ffffff"/>
+    <ellipse cx="-12" cy="-50" rx="4" ry="16" fill="#ffd9ee"/>
+    <ellipse cx="12" cy="-50" rx="4" ry="16" fill="#ffd9ee"/>
+    <circle cx="-10" cy="-12" r="4" fill="#2a1f15"/>
+    <circle cx="10" cy="-12" r="4" fill="#2a1f15"/>
+    <circle cx="-9" cy="-13" r="1.2" fill="#ffffff"/>
+    <circle cx="11" cy="-13" r="1.2" fill="#ffffff"/>
+    <ellipse cx="0" cy="0" rx="3" ry="2" fill="#ff7db0"/>
+    <path d="M 0 2 Q -4 6 -7 4" stroke="#2a1f15" stroke-width="1.5" fill="none"/>
+    <path d="M 0 2 Q 4 6 7 4" stroke="#2a1f15" stroke-width="1.5" fill="none"/>
+    <ellipse cx="-14" cy="3" rx="6" ry="3" fill="#ff9ab6" opacity="0.6"/>
+    <ellipse cx="14" cy="3" rx="6" ry="3" fill="#ff9ab6" opacity="0.6"/>
+    <!-- 蝴蝶结 -->
+    <path d="M -8 -38 L -20 -45 L -20 -32 Z" fill="#ff5e7e"/>
+    <path d="M 8 -38 L 20 -45 L 20 -32 Z" fill="#ff5e7e"/>
+    <circle cx="0" cy="-38" r="5" fill="#ff5e7e"/>
+  </g>
+  <!-- 小熊（前左） -->
+  <g transform="translate(220,520)">
+    <ellipse cx="0" cy="15" rx="32" ry="26" fill="#b08060"/>
+    <circle cx="0" cy="-18" r="30" fill="#b08060"/>
+    <circle cx="-22" cy="-32" r="10" fill="#b08060"/>
+    <circle cx="22" cy="-32" r="10" fill="#b08060"/>
+    <circle cx="-22" cy="-32" r="5" fill="#7a5640"/>
+    <circle cx="22" cy="-32" r="5" fill="#7a5640"/>
+    <ellipse cx="0" cy="-5" rx="14" ry="11" fill="#e8d4b8"/>
+    <circle cx="-10" cy="-18" r="3.5" fill="#2a1f15"/>
+    <circle cx="10" cy="-18" r="3.5" fill="#2a1f15"/>
+    <circle cx="-9" cy="-19" r="1" fill="#ffffff"/>
+    <circle cx="11" cy="-19" r="1" fill="#ffffff"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="2" fill="#2a1f15"/>
+    <path d="M 0 -6 Q -3 0 -6 -2" stroke="#2a1f15" stroke-width="1.5" fill="none"/>
+    <path d="M 0 -6 Q 3 0 6 -2" stroke="#2a1f15" stroke-width="1.5" fill="none"/>
+  </g>
+  <!-- 小狗（前右） -->
+  <g transform="translate(380,520)">
+    <ellipse cx="0" cy="15" rx="32" ry="26" fill="#fff5d6"/>
+    <circle cx="0" cy="-18" r="30" fill="#fff5d6"/>
+    <ellipse cx="-22" cy="-25" rx="10" ry="18" fill="#d9633e"/>
+    <ellipse cx="22" cy="-25" rx="10" ry="18" fill="#d9633e"/>
+    <circle cx="-10" cy="-18" r="3.5" fill="#2a1f15"/>
+    <circle cx="10" cy="-18" r="3.5" fill="#2a1f15"/>
+    <circle cx="-9" cy="-19" r="1" fill="#ffffff"/>
+    <circle cx="11" cy="-19" r="1" fill="#ffffff"/>
+    <ellipse cx="0" cy="-5" rx="4" ry="3" fill="#2a1f15"/>
+    <path d="M 0 -2 L 0 4" stroke="#2a1f15" stroke-width="1.5"/>
+    <path d="M 0 4 Q -4 8 -8 5" stroke="#2a1f15" stroke-width="1.5" fill="none"/>
+    <path d="M 0 4 Q 4 8 8 5" stroke="#2a1f15" stroke-width="1.5" fill="none"/>
+    <ellipse cx="0" cy="6" rx="2.5" ry="2" fill="#ff8fb6"/>
+  </g>
+  <!-- 文字"PARTY"装饰带 -->
+  <g transform="translate(300,150)">
+    <text text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#ff5e7e" stroke="#ffffff" stroke-width="4" paint-order="stroke">PARTY!</text>
+  </g>
+</svg>

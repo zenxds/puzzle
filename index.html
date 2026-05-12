@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>开心拼图</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 关卡选择页 -->
+  <section id="level-select" class="screen active">
+    <div class="header">
+      <h1>开 心 拼 图</h1>
+      <p class="subtitle">选一关开始玩吧！</p>
+    </div>
+    <div id="level-grid" class="level-grid"></div>
+    <button id="reset-progress" class="text-btn">重置进度</button>
+  </section>
+
+  <!-- 游戏页 -->
+  <section id="game" class="screen">
+    <div class="game-topbar">
+      <button id="back-btn" class="icon-btn" aria-label="返回">←</button>
+      <span id="level-title" class="level-title">第 1 关</span>
+      <button id="peek-btn" class="icon-btn" aria-label="看原图">👁</button>
+      <button id="mute-btn" class="icon-btn" aria-label="静音">🔊</button>
+    </div>
+
+    <div class="game-area">
+      <div id="board-wrap" class="board-wrap">
+        <div id="board" class="board"></div>
+        <img id="peek-image" class="peek-image" alt="" />
+      </div>
+      <div id="tray" class="tray"></div>
+    </div>
+  </section>
+
+  <!-- 完成弹层 -->
+  <div id="celebrate" class="celebrate hidden">
+    <canvas id="confetti"></canvas>
+    <div class="celebrate-card">
+      <div class="celebrate-stars">⭐⭐⭐</div>
+      <div class="celebrate-text">你 真 棒！</div>
+      <div class="celebrate-buttons">
+        <button id="again-btn" class="big-btn secondary">再玩一次</button>
+        <button id="next-btn" class="big-btn">下一关 →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/levels.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/celebration.js"></script>
+  <script src="js/puzzle.js"></script>
+  <script src="js/level-select.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

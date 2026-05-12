@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a0e1ff"/>
+      <stop offset="1" stop-color="#dff4ff"/>
+    </linearGradient>
+  </defs>
+  <!-- 天空 -->
+  <rect width="500" height="400" fill="url(#sky2)"/>
+  <!-- 白云 -->
+  <g fill="#ffffff">
+    <ellipse cx="80" cy="70" rx="46" ry="20"/>
+    <ellipse cx="115" cy="60" rx="30" ry="16"/>
+    <ellipse cx="50" cy="65" rx="22" ry="14"/>
+    <ellipse cx="400" cy="90" rx="40" ry="18"/>
+    <ellipse cx="430" cy="80" rx="28" ry="14"/>
+  </g>
+  <!-- 远山 -->
+  <path d="M0 290 L 80 240 L 160 290 L 240 230 L 340 285 L 420 245 L 500 290 L 500 400 L 0 400 Z" fill="#7fc99a" opacity="0.6"/>
+  <!-- 草地 -->
+  <path d="M0 320 L 500 320 L 500 400 L 0 400 Z" fill="#b8e9c9"/>
+  <!-- 小草 -->
+  <g stroke="#5fb47f" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M 30 350 Q 33 340 36 350"/>
+    <path d="M 60 360 Q 63 350 66 360"/>
+    <path d="M 430 355 Q 433 345 436 355"/>
+    <path d="M 470 360 Q 473 350 476 360"/>
+  </g>
+  <!-- 小狗身体 -->
+  <ellipse cx="250" cy="305" rx="100" ry="55" fill="#fff5d6"/>
+  <!-- 腿 -->
+  <rect x="180" y="320" width="26" height="55" rx="13" fill="#fff5d6"/>
+  <rect x="296" y="320" width="26" height="55" rx="13" fill="#fff5d6"/>
+  <rect x="220" y="325" width="24" height="50" rx="12" fill="#f2dfa4"/>
+  <rect x="260" y="325" width="24" height="50" rx="12" fill="#f2dfa4"/>
+  <!-- 尾巴 -->
+  <path d="M 340 280 Q 380 250 390 280 Q 375 295 350 300 Z" fill="#fff5d6"/>
+  <circle cx="385" cy="265" r="10" fill="#fff5d6"/>
+  <!-- 小狗头 -->
+  <ellipse cx="240" cy="200" rx="80" ry="75" fill="#fff5d6"/>
+  <!-- 耳朵（红棕色） -->
+  <path d="M 175 145 Q 155 200 180 230 Q 200 215 195 175 Z" fill="#d9633e"/>
+  <path d="M 305 145 Q 325 200 300 230 Q 280 215 285 175 Z" fill="#d9633e"/>
+  <!-- 头盔（红色） -->
+  <path d="M 175 150 Q 180 100 240 90 Q 300 100 305 150 Q 280 140 240 138 Q 200 140 175 150 Z" fill="#ff3e3e"/>
+  <rect x="187" y="135" width="106" height="18" rx="6" fill="#d12525"/>
+  <!-- 头盔徽章 -->
+  <circle cx="240" cy="120" r="14" fill="#ffffff"/>
+  <path d="M 240 109 L 244 117 L 252 118 L 246 124 L 248 132 L 240 128 L 232 132 L 234 124 L 228 118 L 236 117 Z" fill="#ff3e3e"/>
+  <!-- 脸部白色斑块 -->
+  <path d="M 220 185 Q 240 175 260 185 Q 268 220 250 245 Q 240 250 230 245 Q 212 220 220 185 Z" fill="#ffffff"/>
+  <!-- 眼睛 -->
+  <ellipse cx="216" cy="200" rx="9" ry="12" fill="#ffffff"/>
+  <ellipse cx="264" cy="200" rx="9" ry="12" fill="#ffffff"/>
+  <circle cx="218" cy="204" r="6" fill="#3a2419"/>
+  <circle cx="266" cy="204" r="6" fill="#3a2419"/>
+  <circle cx="216" cy="201" r="2" fill="#ffffff"/>
+  <circle cx="264" cy="201" r="2" fill="#ffffff"/>
+  <!-- 鼻子 -->
+  <ellipse cx="240" cy="225" rx="10" ry="7" fill="#3a2419"/>
+  <!-- 嘴 -->
+  <path d="M 240 232 L 240 244" stroke="#3a2419" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 240 244 Q 230 252 222 246" stroke="#3a2419" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 240 244 Q 250 252 258 246" stroke="#3a2419" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- 舌头 -->
+  <ellipse cx="240" cy="250" rx="6" ry="4" fill="#ff8fb6"/>
+  <!-- 项圈 -->
+  <rect x="195" y="265" width="90" height="14" rx="4" fill="#3aa0ff"/>
+  <circle cx="240" cy="278" r="10" fill="#ffe14d" stroke="#d4a000" stroke-width="2"/>
+  <text x="240" y="283" font-size="14" text-anchor="middle" font-weight="bold" fill="#7a5a00">★</text>
+  <!-- 小爪印背景装饰 -->
+  <g fill="#ffffff" opacity="0.6">
+    <g transform="translate(60,200)">
+      <circle r="6"/>
+      <circle cx="-10" cy="-12" r="4"/>
+      <circle cx="10" cy="-12" r="4"/>
+      <circle cx="-16" cy="2" r="4"/>
+      <circle cx="16" cy="2" r="4"/>
+    </g>
+    <g transform="translate(450,200)">
+      <circle r="6"/>
+      <circle cx="-10" cy="-12" r="4"/>
+      <circle cx="10" cy="-12" r="4"/>
+      <circle cx="-16" cy="2" r="4"/>
+      <circle cx="16" cy="2" r="4"/>
+    </g>
+  </g>
+</svg>

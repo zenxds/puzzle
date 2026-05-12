@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd9b8"/>
+      <stop offset="0.5" stop-color="#ffeacf"/>
+      <stop offset="1" stop-color="#d4ecff"/>
+    </linearGradient>
+    <radialGradient id="water" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0" stop-color="#c2e8ff"/>
+      <stop offset="1" stop-color="#7fc6f0"/>
+    </radialGradient>
+  </defs>
+  <!-- 背景 -->
+  <rect width="500" height="500" fill="url(#bg3)"/>
+  <!-- 远山 -->
+  <path d="M 0 280 L 120 220 L 220 270 L 320 215 L 420 265 L 500 240 L 500 320 L 0 320 Z" fill="#8fbf94" opacity="0.55"/>
+  <!-- 太阳 -->
+  <circle cx="430" cy="90" r="42" fill="#ffd24d"/>
+  <circle cx="430" cy="90" r="55" fill="#ffd24d" opacity="0.35"/>
+  <!-- 温泉水池 -->
+  <ellipse cx="250" cy="380" rx="240" ry="80" fill="url(#water)"/>
+  <ellipse cx="250" cy="375" rx="230" ry="68" fill="#9fd9f5" opacity="0.6"/>
+  <!-- 水波纹 -->
+  <g fill="none" stroke="#ffffff" stroke-width="3" opacity="0.7">
+    <path d="M 80 385 Q 110 380 140 385"/>
+    <path d="M 380 395 Q 410 390 440 395"/>
+    <path d="M 160 410 Q 190 405 220 410"/>
+    <path d="M 320 415 Q 350 410 380 415"/>
+  </g>
+  <!-- 蒸汽 -->
+  <g fill="#ffffff" opacity="0.8">
+    <ellipse cx="120" cy="290" rx="22" ry="14"/>
+    <ellipse cx="105" cy="265" rx="18" ry="12"/>
+    <ellipse cx="135" cy="245" rx="16" ry="10"/>
+    <ellipse cx="380" cy="285" rx="22" ry="14"/>
+    <ellipse cx="395" cy="260" rx="18" ry="12"/>
+    <ellipse cx="365" cy="240" rx="16" ry="10"/>
+  </g>
+  <!-- 卡皮巴拉身体（半浸在水里） -->
+  <ellipse cx="250" cy="370" rx="130" ry="50" fill="#8c6648"/>
+  <!-- 头 -->
+  <ellipse cx="250" cy="290" rx="105" ry="80" fill="#a67852"/>
+  <!-- 嘴部 -->
+  <ellipse cx="250" cy="320" rx="55" ry="36" fill="#8c6648"/>
+  <!-- 耳朵 -->
+  <ellipse cx="178" cy="240" rx="14" ry="20" fill="#7a5640"/>
+  <ellipse cx="322" cy="240" rx="14" ry="20" fill="#7a5640"/>
+  <ellipse cx="178" cy="244" rx="7" ry="11" fill="#5f4632"/>
+  <ellipse cx="322" cy="244" rx="7" ry="11" fill="#5f4632"/>
+  <!-- 眼睛（眯起来的舒服样） -->
+  <g stroke="#2e1f15" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M 200 275 Q 215 268 230 275"/>
+    <path d="M 270 275 Q 285 268 300 275"/>
+  </g>
+  <!-- 鼻孔 -->
+  <ellipse cx="237" cy="320" rx="3.5" ry="5" fill="#2e1f15"/>
+  <ellipse cx="263" cy="320" rx="3.5" ry="5" fill="#2e1f15"/>
+  <!-- 嘴 -->
+  <path d="M 235 340 Q 250 350 265 340" stroke="#2e1f15" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- 腮红 -->
+  <ellipse cx="180" cy="310" rx="14" ry="8" fill="#ff8fb6" opacity="0.6"/>
+  <ellipse cx="320" cy="310" rx="14" ry="8" fill="#ff8fb6" opacity="0.6"/>
+  <!-- 头顶的小橘子 -->
+  <circle cx="250" cy="218" r="22" fill="#ff9540"/>
+  <path d="M 240 200 Q 246 192 252 198 Q 256 192 260 200" fill="#5fa863" stroke="#3f8a45" stroke-width="2"/>
+  <ellipse cx="244" cy="212" rx="4" ry="2" fill="#ffb568" opacity="0.6"/>
+  <!-- 水池边的植物 -->
+  <g>
+    <ellipse cx="60" cy="340" rx="20" ry="40" fill="#5fb47f"/>
+    <ellipse cx="40" cy="350" rx="15" ry="30" fill="#7bc798"/>
+    <ellipse cx="80" cy="355" rx="14" ry="28" fill="#7bc798"/>
+  </g>
+  <g>
+    <ellipse cx="450" cy="345" rx="20" ry="40" fill="#5fb47f"/>
+    <ellipse cx="430" cy="355" rx="15" ry="30" fill="#7bc798"/>
+    <ellipse cx="468" cy="358" rx="14" ry="26" fill="#7bc798"/>
+  </g>
+  <!-- 小花 -->
+  <g transform="translate(75,330)">
+    <circle r="6" fill="#ff7d9b"/>
+    <circle cx="-8" cy="0" r="5" fill="#ff7d9b"/>
+    <circle cx="8" cy="0" r="5" fill="#ff7d9b"/>
+    <circle cx="0" cy="-8" r="5" fill="#ff7d9b"/>
+    <circle cx="0" cy="8" r="5" fill="#ff7d9b"/>
+    <circle r="3" fill="#ffe14d"/>
+  </g>
+</svg>
