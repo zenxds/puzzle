@@ -154,6 +154,7 @@ html, body {
 /* ===== 游戏页 ===== */
 #game {
   padding: 12px;
+  justify-content: flex-start;
 }
 
 .game-topbar {
@@ -194,6 +195,9 @@ html, body {
   flex-direction: column;
   gap: 14px;
   align-items: center;
+  justify-content: flex-start;
+  width: min(100%, 920px);
+  margin: 0 auto;
   min-height: 0;
 }
 
@@ -241,6 +245,7 @@ html, body {
   align-content: flex-start;
   gap: 6px;
   position: relative;
+  overflow: auto;
 }
 
 /* ===== 拼图碎片 ===== */
@@ -338,6 +343,92 @@ html, body {
 }
 .big-btn.secondary:active {
   box-shadow: 0 1px 0 #5e4790;
+}
+
+@media (min-width: 768px) {
+  #level-select {
+    justify-content: center;
+    padding: 40px 32px;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .level-grid {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 220px));
+    justify-content: center;
+    max-width: 980px;
+    gap: 22px;
+  }
+
+  #game {
+    padding: 18px 24px 24px;
+  }
+
+  .game-topbar {
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding-bottom: 18px;
+  }
+
+  .game-area {
+    justify-content: center;
+  }
+
+  .board-wrap {
+    padding: 16px;
+    border-radius: 30px;
+  }
+
+  .peek-image {
+    inset: 16px;
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+  }
+
+  .tray {
+    padding: 14px;
+    min-height: 150px;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .game-area {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(24px, 4vw, 48px);
+    width: min(100%, 1120px);
+  }
+
+  .tray {
+    width: clamp(260px, 30vw, 340px);
+    max-width: 340px;
+    align-self: stretch;
+    max-height: 100%;
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header h1 {
+    font-size: 52px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .icon-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
+  }
+
+  .level-title {
+    font-size: 26px;
+  }
 }
 
 /* ===== 响应式 ===== */

@@ -8,11 +8,32 @@
 
   function computeBoardSize(cols, rows) {
     const vp = getViewportInfo();
-    const reservedTop = 70;
-    const reservedTray = Math.max(140, Math.min(280, vp.h * 0.32));
-    const maxW = vp.w - 24;
-    const maxH = vp.h - reservedTop - reservedTray - 40;
+    const isPad = Math.min(vp.w, vp.h) >= 768;
+    const isLandscape = vp.w > vp.h;
+    const topbarH = isPad ? 92 : 70;
+    const screenPadding = isPad ? 48 : 24;
+    const boardChrome = isPad ? 32 : 24;
     const aspect = cols / rows;
+
+    let maxW;
+    let maxH;
+    if (isPad && isLandscape) {
+      const sideTray = Math.min(340, Math.max(260, vp.w * 0.3));
+      const gap = Math.min(48, Math.max(24, vp.w * 0.04));
+      maxW = vp.w - sideTray - gap - screenPadding - boardChrome;
+      maxH = vp.h - topbarH - screenPadding - boardChrome;
+    } else {
+      const trayMin = isPad ? 170 : 140;
+      const trayMax = isPad ? 260 : 280;
+      const trayRatio = isPad ? 0.24 : 0.32;
+      const reservedTray = Math.max(trayMin, Math.min(trayMax, vp.h * trayRatio));
+      maxW = Math.min(vp.w - screenPadding - boardChrome, isPad ? 720 : vp.w);
+      maxH = vp.h - topbarH - reservedTray - screenPadding - boardChrome;
+    }
+
+    maxW = Math.max(cols * 56, maxW);
+    maxH = Math.max(rows * 56, maxH);
+
     let w = maxW;
     let h = w / aspect;
     if (h > maxH) {
