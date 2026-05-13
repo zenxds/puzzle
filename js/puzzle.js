@@ -6,13 +6,28 @@
     return { w: window.innerWidth, h: window.innerHeight };
   }
 
+  function clamp(min, value, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
   function computeBoardSize(cols, rows) {
     const vp = getViewportInfo();
-    const reservedTop = 70;
-    const reservedTray = Math.max(140, Math.min(280, vp.h * 0.32));
-    const maxW = vp.w - 24;
-    const maxH = vp.h - reservedTop - reservedTray - 40;
+    const isPad = Math.min(vp.w, vp.h) >= 768;
+    const isLandscape = vp.w > vp.h;
     const aspect = cols / rows;
+
+    const outerPad = clamp(24, vp.w * 0.04, isPad ? 64 : 32);
+    const topbarH = clamp(70, vp.w * 0.08, isPad ? 96 : 78);
+    const trayGap = clamp(14, vp.w * 0.02, 36);
+    const trayH = clamp(isPad ? 150 : 140, vp.w * (isPad ? 0.16 : 0.32), isPad ? 210 : 280);
+
+    const boardWRatio = isPad ? 0.82 : 1;
+    const boardHReserve = isPad && isLandscape
+      ? clamp(120, vp.w * 0.13, 170)
+      : trayH;
+    let maxW = vp.w * boardWRatio - outerPad;
+    let maxH = vp.h - topbarH - boardHReserve - trayGap - outerPad;
+
     let w = maxW;
     let h = w / aspect;
     if (h > maxH) {
@@ -110,7 +125,8 @@
 
     layoutTray() {
       const trayRect = this.trayEl.getBoundingClientRect();
-      const padding = 10;
+      const trayStyle = window.getComputedStyle(this.trayEl);
+      const padding = parseFloat(trayStyle.paddingLeft) || 10;
       const { pieceW, pieceH } = this.size;
       const cellW = pieceW + 6;
       const cellH = pieceH + 6;

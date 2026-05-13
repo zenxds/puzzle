@@ -50,7 +50,7 @@
 
   function onComplete() {
     SoundFX.playWin();
-    Storage.markCompleted(currentLevel.id, window.LEVELS.length);
+    Storage.markCompleted(currentLevel.id);
     celebrateEl.classList.remove('hidden');
     Celebration.start();
     // 隐藏"下一关"按钮如果已经是最后一关

@@ -10,7 +10,6 @@
       if (!parsed || typeof parsed !== 'object') return defaultProgress();
       return {
         completed: Array.isArray(parsed.completed) ? parsed.completed : [],
-        highestUnlocked: typeof parsed.highestUnlocked === 'number' ? parsed.highestUnlocked : 1,
       };
     } catch (e) {
       return defaultProgress();
@@ -26,14 +25,12 @@
   }
 
   function defaultProgress() {
-    return { completed: [], highestUnlocked: 1 };
+    return { completed: [] };
   }
 
-  function markCompleted(levelId, totalLevels) {
+  function markCompleted(levelId) {
     const p = read();
     if (!p.completed.includes(levelId)) p.completed.push(levelId);
-    const next = Math.min(levelId + 1, totalLevels);
-    if (next > p.highestUnlocked) p.highestUnlocked = next;
     write(p);
     return p;
   }

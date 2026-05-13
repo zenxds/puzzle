@@ -94,11 +94,6 @@ html, body {
   transform: translateY(6px);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
-.level-card.locked {
-  cursor: not-allowed;
-  filter: grayscale(0.7) brightness(0.95);
-  opacity: 0.7;
-}
 .level-card.completed {
   border-color: #ffd24d;
 }
@@ -127,17 +122,6 @@ html, body {
   font-size: 22px;
   filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.15));
 }
-.level-lock {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 56px;
-  color: rgba(0, 0, 0, 0.35);
-  pointer-events: none;
-}
-
 .text-btn {
   margin-top: 20px;
   background: transparent;
@@ -153,14 +137,16 @@ html, body {
 
 /* ===== 游戏页 ===== */
 #game {
-  padding: 12px;
+  padding: clamp(12px, 2vw, 24px);
 }
 
 .game-topbar {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 8px 12px;
+  gap: clamp(10px, 1.2vw, 16px);
+  width: min(100%, 96vw);
+  margin: 0 auto;
+  padding: clamp(6px, 1vw, 12px) clamp(8px, 1.4vw, 16px) clamp(12px, 1.8vw, 20px);
 }
 .level-title {
   flex: 1;
@@ -192,16 +178,20 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: clamp(14px, 2vw, 24px);
   align-items: center;
+  justify-content: center;
+  width: 100%;
   min-height: 0;
 }
 
 .board-wrap {
+  --board-pad: 12px;
+  --board-pad-total: 24px;
   position: relative;
   background: var(--board-bg);
   border-radius: 24px;
-  padding: 12px;
+  padding: var(--board-pad);
   box-shadow: inset 0 0 0 4px rgba(255, 182, 217, 0.4), 0 6px 0 rgba(0, 0, 0, 0.08);
 }
 .board {
@@ -215,9 +205,9 @@ html, body {
 
 .peek-image {
   position: absolute;
-  inset: 12px;
-  width: calc(100% - 24px);
-  height: calc(100% - 24px);
+  inset: var(--board-pad);
+  width: calc(100% - var(--board-pad-total));
+  height: calc(100% - var(--board-pad-total));
   object-fit: contain;
   border-radius: 12px;
   pointer-events: none;
@@ -231,16 +221,17 @@ html, body {
 .tray {
   background: var(--tray-bg);
   border-radius: 20px;
-  padding: 10px;
+  padding: clamp(10px, 1.4vw, 16px);
   box-shadow: inset 0 0 0 3px rgba(200, 168, 233, 0.35);
-  width: 100%;
+  width: min(100%, 86vw);
   max-width: 720px;
-  min-height: 120px;
+  min-height: clamp(120px, 16vw, 170px);
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 6px;
   position: relative;
+  overflow: auto;
 }
 
 /* ===== 拼图碎片 ===== */
@@ -338,6 +329,55 @@ html, body {
 }
 .big-btn.secondary:active {
   box-shadow: 0 1px 0 #5e4790;
+}
+
+@media (min-width: 768px) {
+  #level-select {
+    justify-content: center;
+    padding: clamp(32px, 4vw, 48px);
+  }
+
+  .level-grid {
+    grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 22vw, 220px), 1fr));
+    max-width: min(92vw, 980px);
+    justify-content: center;
+  }
+
+  .game-topbar {
+    width: min(100%, 92vw);
+  }
+
+  .icon-btn {
+    width: clamp(48px, 5.2vw, 58px);
+    height: clamp(48px, 5.2vw, 58px);
+    font-size: clamp(22px, 2.4vw, 26px);
+  }
+
+  .level-title {
+    font-size: clamp(22px, 2.4vw, 28px);
+  }
+
+  .board-wrap {
+    --board-pad: clamp(12px, 1.5vw, 18px);
+    --board-pad-total: clamp(24px, 3vw, 36px);
+  }
+
+  .tray {
+    width: min(100%, 82vw);
+    max-width: none;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  .game-area {
+    flex-direction: column;
+  }
+
+  .tray {
+    width: min(100%, 82vw);
+    max-width: none;
+    min-height: clamp(120px, 13vw, 170px);
+  }
 }
 
 /* ===== 响应式 ===== */
