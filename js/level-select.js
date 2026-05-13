@@ -7,10 +7,9 @@
 
     window.LEVELS.forEach(level => {
       const completed = progress.completed.includes(level.id);
-      const unlocked = level.id <= progress.highestUnlocked;
 
       const card = document.createElement('div');
-      card.className = 'level-card' + (completed ? ' completed' : '') + (!unlocked ? ' locked' : '');
+      card.className = 'level-card' + (completed ? ' completed' : '');
 
       const thumb = document.createElement('div');
       thumb.className = 'level-thumb';
@@ -33,14 +32,7 @@
         stars.textContent = '⭐';
         card.appendChild(stars);
       }
-      if (!unlocked) {
-        const lock = document.createElement('div');
-        lock.className = 'level-lock';
-        lock.textContent = '🔒';
-        card.appendChild(lock);
-      } else {
-        card.addEventListener('click', () => onPick(level));
-      }
+      card.addEventListener('click', () => onPick(level));
 
       grid.appendChild(card);
     });
