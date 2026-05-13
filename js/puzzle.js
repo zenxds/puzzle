@@ -21,16 +21,12 @@
     const trayGap = clamp(14, vp.w * 0.02, 36);
     const trayH = clamp(isPad ? 150 : 140, vp.w * (isPad ? 0.16 : 0.32), isPad ? 210 : 280);
 
-    let maxW;
-    let maxH;
-    if (isPad && isLandscape) {
-      const trayW = clamp(250, vp.w * 0.28, 330);
-      maxW = vp.w * 0.92 - trayW - trayGap - outerPad;
-      maxH = vp.h - topbarH - outerPad;
-    } else {
-      maxW = vp.w * (isPad ? 0.82 : 1) - outerPad;
-      maxH = vp.h - topbarH - trayH - trayGap - outerPad;
-    }
+    const boardWRatio = isPad ? 0.82 : 1;
+    const boardHReserve = isPad && isLandscape
+      ? clamp(120, vp.w * 0.13, 170)
+      : trayH;
+    let maxW = vp.w * boardWRatio - outerPad;
+    let maxH = vp.h - topbarH - boardHReserve - trayGap - outerPad;
 
     let w = maxW;
     let h = w / aspect;

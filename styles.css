@@ -203,6 +203,7 @@ html, body {
 
 .board-wrap {
   --board-pad: 12px;
+  --board-pad-total: 24px;
   position: relative;
   background: var(--board-bg);
   border-radius: 24px;
@@ -221,8 +222,8 @@ html, body {
 .peek-image {
   position: absolute;
   inset: var(--board-pad);
-  width: calc(100% - var(--board-pad) * 2);
-  height: calc(100% - var(--board-pad) * 2);
+  width: calc(100% - var(--board-pad-total));
+  height: calc(100% - var(--board-pad-total));
   object-fit: contain;
   border-radius: 12px;
   pointer-events: none;
@@ -374,6 +375,7 @@ html, body {
 
   .board-wrap {
     --board-pad: clamp(12px, 1.5vw, 18px);
+    --board-pad-total: clamp(24px, 3vw, 36px);
   }
 
   .tray {
@@ -384,16 +386,13 @@ html, body {
 
 @media (min-width: 768px) and (orientation: landscape) {
   .game-area {
-    flex-direction: row;
-    gap: clamp(18px, 3vw, 36px);
+    flex-direction: column;
   }
 
   .tray {
-    width: 28vw;
-    min-width: 250px;
-    max-width: 330px;
-    height: min(62vh, 52vw);
-    min-height: 0;
+    width: min(100%, 82vw);
+    max-width: none;
+    min-height: clamp(120px, 13vw, 170px);
   }
 }
 
