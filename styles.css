@@ -153,15 +153,16 @@ html, body {
 
 /* ===== 游戏页 ===== */
 #game {
-  padding: 12px;
-  justify-content: flex-start;
+  padding: clamp(12px, 2vw, 24px);
 }
 
 .game-topbar {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 8px 12px;
+  gap: clamp(10px, 1.2vw, 16px);
+  width: min(100%, 96vw);
+  margin: 0 auto;
+  padding: clamp(6px, 1vw, 12px) clamp(8px, 1.4vw, 16px) clamp(12px, 1.8vw, 20px);
 }
 .level-title {
   flex: 1;
@@ -193,19 +194,19 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: clamp(14px, 2vw, 24px);
   align-items: center;
-  justify-content: flex-start;
-  width: min(100%, 920px);
-  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
   min-height: 0;
 }
 
 .board-wrap {
+  --board-pad: 12px;
   position: relative;
   background: var(--board-bg);
   border-radius: 24px;
-  padding: 12px;
+  padding: var(--board-pad);
   box-shadow: inset 0 0 0 4px rgba(255, 182, 217, 0.4), 0 6px 0 rgba(0, 0, 0, 0.08);
 }
 .board {
@@ -219,9 +220,9 @@ html, body {
 
 .peek-image {
   position: absolute;
-  inset: 12px;
-  width: calc(100% - 24px);
-  height: calc(100% - 24px);
+  inset: var(--board-pad);
+  width: calc(100% - var(--board-pad) * 2);
+  height: calc(100% - var(--board-pad) * 2);
   object-fit: contain;
   border-radius: 12px;
   pointer-events: none;
@@ -235,11 +236,11 @@ html, body {
 .tray {
   background: var(--tray-bg);
   border-radius: 20px;
-  padding: 10px;
+  padding: clamp(10px, 1.4vw, 16px);
   box-shadow: inset 0 0 0 3px rgba(200, 168, 233, 0.35);
-  width: 100%;
+  width: min(100%, 86vw);
   max-width: 720px;
-  min-height: 120px;
+  min-height: clamp(120px, 16vw, 170px);
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -348,86 +349,51 @@ html, body {
 @media (min-width: 768px) {
   #level-select {
     justify-content: center;
-    padding: 40px 32px;
-  }
-
-  .header {
-    margin-bottom: 32px;
+    padding: clamp(32px, 4vw, 48px);
   }
 
   .level-grid {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 220px));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 22vw, 220px), 1fr));
+    max-width: min(92vw, 980px);
     justify-content: center;
-    max-width: 980px;
-    gap: 22px;
-  }
-
-  #game {
-    padding: 18px 24px 24px;
   }
 
   .game-topbar {
-    width: min(100%, 980px);
-    margin: 0 auto;
-    padding-bottom: 18px;
+    width: min(100%, 92vw);
   }
 
-  .game-area {
-    justify-content: center;
+  .icon-btn {
+    width: clamp(48px, 5.2vw, 58px);
+    height: clamp(48px, 5.2vw, 58px);
+    font-size: clamp(22px, 2.4vw, 26px);
+  }
+
+  .level-title {
+    font-size: clamp(22px, 2.4vw, 28px);
   }
 
   .board-wrap {
-    padding: 16px;
-    border-radius: 30px;
-  }
-
-  .peek-image {
-    inset: 16px;
-    width: calc(100% - 32px);
-    height: calc(100% - 32px);
+    --board-pad: clamp(12px, 1.5vw, 18px);
   }
 
   .tray {
-    padding: 14px;
-    min-height: 150px;
+    width: min(100%, 82vw);
+    max-width: none;
   }
 }
 
 @media (min-width: 768px) and (orientation: landscape) {
   .game-area {
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(24px, 4vw, 48px);
-    width: min(100%, 1120px);
+    gap: clamp(18px, 3vw, 36px);
   }
 
   .tray {
-    width: clamp(260px, 30vw, 340px);
-    max-width: 340px;
-    align-self: stretch;
-    max-height: 100%;
+    width: 28vw;
+    min-width: 250px;
+    max-width: 330px;
+    height: min(62vh, 52vw);
     min-height: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .header h1 {
-    font-size: 52px;
-  }
-
-  .subtitle {
-    font-size: 20px;
-  }
-
-  .icon-btn {
-    width: 54px;
-    height: 54px;
-    font-size: 24px;
-  }
-
-  .level-title {
-    font-size: 26px;
   }
 }
 

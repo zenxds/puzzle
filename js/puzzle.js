@@ -6,33 +6,31 @@
     return { w: window.innerWidth, h: window.innerHeight };
   }
 
+  function clamp(min, value, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
   function computeBoardSize(cols, rows) {
     const vp = getViewportInfo();
     const isPad = Math.min(vp.w, vp.h) >= 768;
     const isLandscape = vp.w > vp.h;
-    const topbarH = isPad ? 92 : 70;
-    const screenPadding = isPad ? 48 : 24;
-    const boardChrome = isPad ? 32 : 24;
     const aspect = cols / rows;
+
+    const outerPad = clamp(24, vp.w * 0.04, isPad ? 64 : 32);
+    const topbarH = clamp(70, vp.w * 0.08, isPad ? 96 : 78);
+    const trayGap = clamp(14, vp.w * 0.02, 36);
+    const trayH = clamp(isPad ? 150 : 140, vp.w * (isPad ? 0.16 : 0.32), isPad ? 210 : 280);
 
     let maxW;
     let maxH;
     if (isPad && isLandscape) {
-      const sideTray = Math.min(340, Math.max(260, vp.w * 0.3));
-      const gap = Math.min(48, Math.max(24, vp.w * 0.04));
-      maxW = vp.w - sideTray - gap - screenPadding - boardChrome;
-      maxH = vp.h - topbarH - screenPadding - boardChrome;
+      const trayW = clamp(250, vp.w * 0.28, 330);
+      maxW = vp.w * 0.92 - trayW - trayGap - outerPad;
+      maxH = vp.h - topbarH - outerPad;
     } else {
-      const trayMin = isPad ? 170 : 140;
-      const trayMax = isPad ? 260 : 280;
-      const trayRatio = isPad ? 0.24 : 0.32;
-      const reservedTray = Math.max(trayMin, Math.min(trayMax, vp.h * trayRatio));
-      maxW = Math.min(vp.w - screenPadding - boardChrome, isPad ? 720 : vp.w);
-      maxH = vp.h - topbarH - reservedTray - screenPadding - boardChrome;
+      maxW = vp.w * (isPad ? 0.82 : 1) - outerPad;
+      maxH = vp.h - topbarH - trayH - trayGap - outerPad;
     }
-
-    maxW = Math.max(cols * 56, maxW);
-    maxH = Math.max(rows * 56, maxH);
 
     let w = maxW;
     let h = w / aspect;
@@ -131,7 +129,8 @@
 
     layoutTray() {
       const trayRect = this.trayEl.getBoundingClientRect();
-      const padding = 10;
+      const trayStyle = window.getComputedStyle(this.trayEl);
+      const padding = parseFloat(trayStyle.paddingLeft) || 10;
       const { pieceW, pieceH } = this.size;
       const cellW = pieceW + 6;
       const cellH = pieceH + 6;
