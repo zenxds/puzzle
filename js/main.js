@@ -34,7 +34,11 @@
 
   function startLevel(level) {
     currentLevel = level;
-    levelTitleEl.textContent = `第 ${level.id} 关 · ${level.name}`;
+    const batch = window.LEVEL_BATCHES.find(b => b.id === level.batch);
+    const indexInBatch = window.LEVELS.filter(l => l.batch === level.batch).findIndex(l => l.id === level.id) + 1;
+    levelTitleEl.textContent = batch
+      ? `${batch.size} ${batch.label} · 第 ${indexInBatch} 关 · ${level.name}`
+      : level.name;
     showGame();
     // 等切换屏幕后 DOM 尺寸稳定再初始化
     requestAnimationFrame(() => {
@@ -57,7 +61,8 @@
     celebrateEl.classList.remove('hidden');
     Celebration.start();
     // 隐藏"下一关"按钮如果已经是最后一关
-    const isLast = currentLevel.id >= window.LEVELS.length;
+    const idx = window.LEVELS.findIndex(l => l.id === currentLevel.id);
+    const isLast = idx === window.LEVELS.length - 1;
     nextBtn.style.display = isLast ? 'none' : '';
   }
 
