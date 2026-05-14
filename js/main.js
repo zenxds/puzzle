@@ -21,6 +21,9 @@
     gameScreen.classList.remove('active');
     Puzzle.setCurrent(null);
     SoundFX.stopBgm();
+    if (currentLevel && currentLevel.batch) {
+      LevelSelect.setBatch(currentLevel.batch);
+    }
     LevelSelect.render(startLevel);
   }
 
@@ -92,7 +95,8 @@
 
   nextBtn.addEventListener('click', () => {
     closeCelebrate();
-    const next = window.LEVELS.find(l => l.id === currentLevel.id + 1);
+    const idx = window.LEVELS.findIndex(l => l.id === currentLevel.id);
+    const next = idx >= 0 ? window.LEVELS[idx + 1] : null;
     if (next) startLevel(next); else showSelect();
   });
 
