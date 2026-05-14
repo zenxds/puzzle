@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="bgC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff0d0"/>
+      <stop offset="1" stop-color="#ffd9ec"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bgC)"/>
+  <!-- 桌布 -->
+  <rect x="0" y="450" width="600" height="150" fill="#ff9bbf"/>
+  <g fill="#ffffff" opacity="0.6">
+    <rect x="40" y="470" width="20" height="20"/>
+    <rect x="180" y="500" width="20" height="20"/>
+    <rect x="340" y="470" width="20" height="20"/>
+    <rect x="500" y="500" width="20" height="20"/>
+    <rect x="120" y="540" width="20" height="20"/>
+    <rect x="430" y="540" width="20" height="20"/>
+  </g>
+  <!-- 蛋糕盘 -->
+  <ellipse cx="300" cy="460" rx="220" ry="22" fill="#f4e6ff"/>
+  <!-- 底层 -->
+  <rect x="120" y="350" width="360" height="110" rx="10" fill="#fff5dc"/>
+  <rect x="120" y="350" width="360" height="20" fill="#ffd0e8"/>
+  <g fill="#ff7da6">
+    <circle cx="170" cy="385" r="7"/>
+    <circle cx="240" cy="385" r="7"/>
+    <circle cx="310" cy="385" r="7"/>
+    <circle cx="380" cy="385" r="7"/>
+    <circle cx="450" cy="385" r="7"/>
+  </g>
+  <!-- 中层 -->
+  <rect x="180" y="260" width="240" height="100" rx="8" fill="#ffd0e8"/>
+  <rect x="180" y="260" width="240" height="18" fill="#fff5dc"/>
+  <path d="M 180 278 Q 220 270 260 278 T 340 278 T 420 278" fill="none" stroke="#fff" stroke-width="4"/>
+  <g fill="#ff5e8e">
+    <circle cx="220" cy="295" r="6"/>
+    <circle cx="300" cy="295" r="6"/>
+    <circle cx="380" cy="295" r="6"/>
+  </g>
+  <!-- 顶层 -->
+  <rect x="240" y="180" width="120" height="90" rx="8" fill="#fff5dc"/>
+  <rect x="240" y="180" width="120" height="14" fill="#ff9bbf"/>
+  <!-- 草莓 -->
+  <g>
+    <path d="M 290 170 Q 280 155 300 145 Q 320 155 310 170 Q 305 180 300 180 Q 295 180 290 170 Z" fill="#ff5e8e"/>
+    <path d="M 294 145 L 296 138 L 300 142 L 304 138 L 306 145 Z" fill="#6ec88a"/>
+    <circle cx="296" cy="158" r="1.4" fill="#fff"/>
+    <circle cx="304" cy="162" r="1.4" fill="#fff"/>
+    <circle cx="298" cy="170" r="1.4" fill="#fff"/>
+  </g>
+  <!-- 蜡烛 -->
+  <rect x="296" y="100" width="8" height="50" fill="#b07eff"/>
+  <path d="M 300 70 Q 290 85 300 100 Q 310 85 300 70 Z" fill="#ffd24d"/>
+  <path d="M 300 78 Q 295 88 300 100 Q 305 88 300 78 Z" fill="#ff7d00"/>
+  <!-- 闪光 -->
+  <g fill="#ffd24d">
+    <polygon points="100,120 104,132 116,132 106,140 110,152 100,144 90,152 94,140 84,132 96,132"/>
+    <polygon points="500,90 503,98 511,98 505,103 507,111 500,106 493,111 495,103 489,98 497,98"/>
+    <polygon points="80,260 83,268 91,268 85,273 87,281 80,276 73,281 75,273 69,268 77,268"/>
+  </g>
+  <!-- 气球 -->
+  <g>
+    <ellipse cx="450" cy="120" rx="32" ry="40" fill="#ff7da6"/>
+    <path d="M 450 160 L 448 168 L 452 168 Z" fill="#ff7da6"/>
+    <path d="M 450 168 Q 460 200 445 230" stroke="#a0a0a0" stroke-width="2" fill="none"/>
+    <ellipse cx="510" cy="160" rx="26" ry="34" fill="#b07eff"/>
+    <path d="M 510 194 L 508 202 L 512 202 Z" fill="#b07eff"/>
+    <path d="M 510 202 Q 502 230 515 250" stroke="#a0a0a0" stroke-width="2" fill="none"/>
+  </g>
+  <!-- 小心 -->
+  <path d="M 140 80 q -10 -12 -18 -4 q -8 8 0 16 l 18 16 l 18 -16 q 8 -8 0 -16 q -8 -8 -18 4 z" fill="#ff5e8e"/>
+</svg>

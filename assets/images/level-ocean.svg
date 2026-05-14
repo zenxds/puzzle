@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="bgO" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bff0ff"/>
+      <stop offset="1" stop-color="#5db6e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#bgO)"/>
+  <!-- 海面波纹 -->
+  <g fill="none" stroke="#ffffff" stroke-width="3" opacity="0.6" stroke-linecap="round">
+    <path d="M 30 120 Q 60 110 90 120"/>
+    <path d="M 380 90 Q 410 80 440 90"/>
+    <path d="M 60 380 Q 100 370 140 380"/>
+  </g>
+  <!-- 海底沙地 -->
+  <path d="M 0 420 Q 120 400 250 420 T 500 415 L 500 500 L 0 500 Z" fill="#f6e6b4"/>
+  <!-- 海草 -->
+  <path d="M 90 420 Q 80 380 95 350 Q 105 380 90 420 Z" fill="#6ec88a"/>
+  <path d="M 420 420 Q 408 370 425 330 Q 438 370 420 420 Z" fill="#6ec88a"/>
+  <!-- 小鱼身体 -->
+  <ellipse cx="240" cy="260" rx="105" ry="70" fill="#ffb24d"/>
+  <!-- 尾巴 -->
+  <path d="M 130 260 L 70 200 L 80 260 L 70 320 Z" fill="#ff9020"/>
+  <!-- 鳍 -->
+  <path d="M 240 195 L 220 150 L 260 180 Z" fill="#ff9020"/>
+  <path d="M 240 325 L 230 360 L 270 335 Z" fill="#ff9020"/>
+  <!-- 鳞片 -->
+  <g fill="#ffd991" opacity="0.85">
+    <path d="M 200 240 Q 215 225 230 240 Q 215 255 200 240"/>
+    <path d="M 240 240 Q 255 225 270 240 Q 255 255 240 240"/>
+    <path d="M 280 240 Q 295 225 310 240 Q 295 255 280 240"/>
+    <path d="M 220 270 Q 235 255 250 270 Q 235 285 220 270"/>
+    <path d="M 260 270 Q 275 255 290 270 Q 275 285 260 270"/>
+  </g>
+  <!-- 眼睛 -->
+  <circle cx="310" cy="240" r="16" fill="#fff"/>
+  <circle cx="313" cy="243" r="9" fill="#3d3556"/>
+  <circle cx="316" cy="240" r="3" fill="#fff"/>
+  <!-- 嘴 -->
+  <path d="M 340 270 Q 350 280 340 290" fill="none" stroke="#a04077" stroke-width="3" stroke-linecap="round"/>
+  <!-- 气泡 -->
+  <g fill="#ffffff" opacity="0.85">
+    <circle cx="360" cy="170" r="10"/>
+    <circle cx="380" cy="140" r="6"/>
+    <circle cx="395" cy="120" r="4"/>
+  </g>
+  <!-- 星星海星 -->
+  <g fill="#ff7da6" transform="translate(420 410) rotate(15)">
+    <path d="M 0 -25 L 8 -8 L 25 -5 L 12 8 L 16 25 L 0 16 L -16 25 L -12 8 L -25 -5 L -8 -8 Z"/>
+  </g>
+</svg>

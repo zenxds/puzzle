@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="bgF" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e7f5d8"/>
+      <stop offset="1" stop-color="#c1e5a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#bgF)"/>
+  <!-- 远山 -->
+  <path d="M 0 280 Q 100 200 200 260 Q 320 200 500 270 L 500 500 L 0 500 Z" fill="#b6dca0" opacity="0.6"/>
+  <!-- 草地 -->
+  <path d="M 0 380 Q 150 360 280 380 T 500 375 L 500 500 L 0 500 Z" fill="#8fc97a"/>
+  <!-- 大树1 -->
+  <rect x="80" y="280" width="22" height="100" fill="#8b5a3a"/>
+  <circle cx="91" cy="260" r="55" fill="#6ec88a"/>
+  <circle cx="60" cy="240" r="35" fill="#7fd49c"/>
+  <circle cx="125" cy="240" r="35" fill="#7fd49c"/>
+  <!-- 大树2 -->
+  <rect x="395" y="290" width="22" height="100" fill="#8b5a3a"/>
+  <circle cx="406" cy="270" r="50" fill="#6ec88a"/>
+  <circle cx="380" cy="255" r="30" fill="#7fd49c"/>
+  <circle cx="435" cy="255" r="30" fill="#7fd49c"/>
+  <!-- 精灵身体（兔子样小妖精） -->
+  <ellipse cx="250" cy="370" rx="60" ry="45" fill="#fff5e0"/>
+  <!-- 头 -->
+  <circle cx="250" cy="290" r="55" fill="#fff5e0"/>
+  <!-- 长耳朵 -->
+  <ellipse cx="225" cy="210" rx="14" ry="38" fill="#fff5e0"/>
+  <ellipse cx="275" cy="210" rx="14" ry="38" fill="#fff5e0"/>
+  <ellipse cx="225" cy="215" rx="6" ry="26" fill="#ffd9ec"/>
+  <ellipse cx="275" cy="215" rx="6" ry="26" fill="#ffd9ec"/>
+  <!-- 翅膀 -->
+  <path d="M 190 320 Q 140 290 130 350 Q 170 360 195 340 Z" fill="#fff" opacity="0.85" stroke="#a0c8e8" stroke-width="2"/>
+  <path d="M 310 320 Q 360 290 370 350 Q 330 360 305 340 Z" fill="#fff" opacity="0.85" stroke="#a0c8e8" stroke-width="2"/>
+  <!-- 眼睛 -->
+  <ellipse cx="232" cy="290" rx="6" ry="9" fill="#3d3556"/>
+  <ellipse cx="268" cy="290" rx="6" ry="9" fill="#3d3556"/>
+  <circle cx="234" cy="287" r="2" fill="#fff"/>
+  <circle cx="270" cy="287" r="2" fill="#fff"/>
+  <!-- 腮红 -->
+  <ellipse cx="218" cy="305" rx="8" ry="4" fill="#ff8fb6" opacity="0.7"/>
+  <ellipse cx="282" cy="305" rx="8" ry="4" fill="#ff8fb6" opacity="0.7"/>
+  <!-- 嘴 -->
+  <path d="M 244 312 Q 250 318 256 312" fill="none" stroke="#7a4368" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- 魔法棒小星 -->
+  <g fill="#ffd24d">
+    <polygon points="360,150 364,162 376,162 366,170 370,182 360,174 350,182 354,170 344,162 356,162"/>
+    <polygon points="80,170 83,178 91,178 85,183 87,191 80,186 73,191 75,183 69,178 77,178"/>
+  </g>
+  <!-- 小花 -->
+  <g>
+    <circle cx="140" cy="420" r="6" fill="#ff8fb6"/>
+    <circle cx="380" cy="420" r="6" fill="#ffd24d"/>
+    <circle cx="320" cy="430" r="5" fill="#b07eff"/>
+  </g>
+</svg>
