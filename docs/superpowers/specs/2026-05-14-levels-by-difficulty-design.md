@@ -59,9 +59,8 @@ window.LEVEL_BATCHES = [
 ### 与旧文件的差异
 
 - 旧：`level-1-pony.svg` → 新：`level-pony.svg`（重命名去掉序号，避免编号绑定）
-- 现有 `level-2-puppy.svg`（5×4 比例的图）会在 4×4 网格使用；SVG 是矢量，重新走 `preserveAspectRatio` 即可适配方形
-- 现有 `level-4-unicorn.svg`（6×5 比例）同理移到 6×6 网格使用
-- 新增 4 张 SVG：`level-kitten.svg` / `level-ocean.svg` / `level-forest.svg` / `level-cake.svg`，沿用现有简笔画粉嫩风格
+- 现有 SVG viewBox：pony 400×400 ✓、capybara 500×500 ✓、party 600×600 ✓ 已是正方形可直接用；**puppy 500×400 与 unicorn 600×500 不是正方形**，需要把 viewBox 改为正方形（增加高度并把图形垂直居中）以避免在新网格里被压扁
+- 新增 4 张 SVG：`level-kitten.svg`（400×400 给 4×4） / `level-ocean.svg`（500×500 给 5×5） / `level-forest.svg`（500×500 给 5×5） / `level-cake.svg`（600×600 给 6×6），沿用现有简笔画粉嫩风格
 
 ## 资源文件
 
