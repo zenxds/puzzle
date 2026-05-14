@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
   <defs>
     <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#a0e1ff"/>
@@ -6,7 +6,8 @@
     </linearGradient>
   </defs>
   <!-- 天空 -->
-  <rect width="500" height="400" fill="url(#sky2)"/>
+  <rect width="500" height="500" fill="url(#sky2)"/>
+  <g transform="translate(0, 50)">
   <!-- 白云 -->
   <g fill="#ffffff">
     <ellipse cx="80" cy="70" rx="46" ry="20"/>
@@ -84,5 +85,6 @@
       <circle cx="-16" cy="2" r="4"/>
       <circle cx="16" cy="2" r="4"/>
     </g>
+  </g>
   </g>
 </svg>
