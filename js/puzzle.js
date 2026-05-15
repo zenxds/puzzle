@@ -11,31 +11,37 @@
   }
 
   function computeBoardSize(cols, rows) {
+    const piecesCount = cols * rows;
     const vp = getViewportInfo();
     const isPad = Math.min(vp.w, vp.h) >= 768;
-    const isLandscape = vp.w > vp.h;
     const aspect = cols / rows;
 
     const outerPad = clamp(24, vp.w * 0.04, isPad ? 64 : 32);
     const topbarH = clamp(70, vp.w * 0.08, isPad ? 96 : 78);
     const trayGap = clamp(14, vp.w * 0.02, 36);
-    const trayH = clamp(isPad ? 150 : 140, vp.w * (isPad ? 0.16 : 0.32), isPad ? 210 : 280);
-
     const boardWRatio = isPad ? 0.82 : 1;
-    const boardHReserve = isPad && isLandscape
-      ? clamp(120, vp.w * 0.13, 170)
-      : trayH;
-    let maxW = vp.w * boardWRatio - outerPad;
-    let maxH = vp.h - topbarH - boardHReserve - trayGap - outerPad;
+    // Tray usable width (approximate): viewport minus outer padding and tray's inner padding.
+    const trayInnerW = vp.w - outerPad - 20;
 
-    let w = maxW;
-    let h = w / aspect;
-    if (h > maxH) {
-      h = maxH;
-      w = h * aspect;
+    // Iteratively shrink the board until topbar + board + tray fits in viewport height.
+    // Reservation by a fixed trayH (the old approach) underestimated tray height for
+    // grids with many pieces (e.g. 16 pieces could need 6 rows on phones).
+    let boardW = vp.w * boardWRatio - outerPad;
+    let boardH = boardW / aspect;
+    for (let i = 0; i < 40; i++) {
+      const pieceW = boardW / cols;
+      const pieceH = boardH / rows;
+      const perRow = Math.max(1, Math.floor(trayInnerW / (pieceW + 6)));
+      const trayRows = Math.ceil(piecesCount / perRow);
+      const trayH = trayRows * (pieceH + 6) + 20;
+      const totalH = topbarH + boardH + trayGap + trayH + outerPad;
+      if (totalH <= vp.h) break;
+      if (boardW <= 200) break;
+      boardW *= 0.96;
+      boardH = boardW / aspect;
     }
-    w = Math.floor(w / cols) * cols;
-    h = Math.floor(h / rows) * rows;
+    const w = Math.floor(boardW / cols) * cols;
+    const h = Math.floor(boardH / rows) * rows;
     return { w, h, pieceW: w / cols, pieceH: h / rows };
   }
 

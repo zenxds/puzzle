@@ -210,6 +210,8 @@ html, body {
   width: min(100%, 96vw);
   margin: 0 auto;
   padding: clamp(6px, 1vw, 12px) clamp(8px, 1.4vw, 16px) clamp(12px, 1.8vw, 20px);
+  position: relative;
+  z-index: 10;
 }
 .level-title {
   flex: 1;
